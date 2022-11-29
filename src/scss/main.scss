@@ -1023,5 +1023,51 @@ a.underlined {
     .about_5 {
         min-height: 600px;
         background-color: $background-color-1;
+        display: flex;
+        padding: 96px 80px 80px 80px;
+        gap: 130px;
+
+        .left {
+            width: 410px;
+            display: flex;
+            flex-direction: column;
+
+            h2 {
+                margin-bottom: 32px;
+            }
+
+            p {
+                font-size: 25px;
+                line-height: 130%;
+                letter-spacing: -0.01em;
+            }
+
+            a {
+                align-items: center;
+                display: flex;
+                margin-top: 24px;
+
+                img {
+                    margin-left: 12px;
+                    top: 0;
+                    position: relative;
+                    transition: top 0.2s;
+                }
+
+                &:hover {
+                    img {
+                        top: 5px;
+                    }
+                }
+            }
+        }
+
+        .right {
+            width: 520px;
+
+            h2 {
+                margin-bottom: 50px;
+            }
+        }
     }
 }
