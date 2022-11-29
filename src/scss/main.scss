@@ -640,7 +640,8 @@ a.underlined {
                 }
 
                 .title {
-                    writing-mode: sideways-lr;
+                    writing-mode: tb-rl;
+                    transform: rotate(-180deg);
                     font-family: "Telegraf Regular";
                     font-size: 34px;
                     margin-top: 24px;
