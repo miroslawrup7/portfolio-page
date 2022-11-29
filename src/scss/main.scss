@@ -226,6 +226,12 @@ a.underlined {
                 line-height: 130%;
                 letter-spacing: -0.01em;
             }
+
+            &:hover {
+                p {
+                    color: $font-color-3;
+                }
+            }
         }
 
         @keyframes stack {
@@ -510,7 +516,7 @@ a.underlined {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                padding: 0 60px;
+                padding: 0 72px 0 0;
 
                 img {
                     padding: 16px 20px;
@@ -518,6 +524,7 @@ a.underlined {
 
                     &.arrow-left {
                         visibility: hidden;
+                        padding-left: 0;
                     }
                 }
             }
@@ -921,7 +928,7 @@ a.underlined {
             }
 
             &.after {
-                margin-top: 60px;
+                margin-top: 80px;
                 float: right;
             }
         }
