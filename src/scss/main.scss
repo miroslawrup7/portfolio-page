@@ -115,11 +115,6 @@ a.underlined {
 
                     &:first-child {
                         margin-left: 0;
-
-                        a {
-                            font-weight: 700;
-                        }
-
                     }
 
                     &:last-child {
@@ -127,17 +122,9 @@ a.underlined {
                     }
 
                     &.active {
-                        position: relative;
 
-                        &::after {
-                            content: "";
-                            position: absolute;
-                            height: 10px;
-                            width: 100%;
-                            background-color: $border-color-5;
-                            left: 0;
-                            bottom: 3px;
-                            z-index: -1;
+                        a {
+                            font-weight: 700;
                         }
                     }
                 }
@@ -202,7 +189,7 @@ a.underlined {
                 margin: 0 32px;
                 position: relative;
                 letter-spacing: -0.01em;
-                color: $font-color-2;
+                color: $font-color-1;
 
                 &::after {
                     content: "•";
@@ -227,9 +214,19 @@ a.underlined {
                 letter-spacing: -0.01em;
             }
 
+            img {
+                position: relative;
+                transition: all 0.2s;
+                top: 0;
+            }
+
             &:hover {
                 p {
                     color: $font-color-3;
+                }
+
+                img {
+                    top: 5px;
                 }
             }
         }
@@ -395,7 +392,6 @@ a.underlined {
             }
 
             a {
-
                 height: 40px;
                 display: flex;
                 width: fit-content;
@@ -411,6 +407,15 @@ a.underlined {
 
                 img {
                     margin-left: 12px;
+                    position: relative;
+                    left: 0;
+                    transition: left 0.2s;
+                }
+
+                &:hover {
+                    img {
+                        left: 5px;
+                    }
                 }
             }
         }
@@ -498,6 +503,15 @@ a.underlined {
 
                 img {
                     margin-left: 12px;
+                    position: relative;
+                    left: 0;
+                    transition: left 0.2s;
+                }
+
+                &:hover {
+                    img {
+                        left: 5px;
+                    }
                 }
 
             }
@@ -516,7 +530,7 @@ a.underlined {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                padding: 0 72px 0 0;
+                padding: 0 67px 0 0;
 
                 img {
                     padding: 16px 20px;
@@ -525,6 +539,24 @@ a.underlined {
                     &.arrow-left {
                         visibility: hidden;
                         padding-left: 0;
+                        position: relative;
+                        left: 5px;
+                        transition: left 0.2s;
+                        z-index: 1;
+
+                        &:hover {
+                            left: 0px;
+                        }
+                    }
+
+                    &.arrow-right {
+                        position: relative;
+                        left: 0;
+                        transition: left 0.2s;
+
+                        &:hover {
+                            left: 5px;
+                        }
                     }
                 }
             }
@@ -621,6 +653,16 @@ a.underlined {
 
                     img {
                         display: flex;
+                        transform: rotate(none);
+                        transition: transform 0.2s;
+
+
+                    }
+
+                    &:hover {
+                        img {
+                            transform: rotate(-60deg);
+                        }
                     }
                 }
             }
@@ -798,12 +840,26 @@ a.underlined {
                 align-items: center;
                 flex-direction: column;
 
+                img {
+                    position: relative;
+                    bottom: 0;
+                    transition: bottom 0.2s;
+                }
+
                 p {
                     margin-top: 10px;
                     font-size: 25px;
                     letter-spacing: -0.01em;
                     line-height: 130%;
                     font-family: "Telegraf Regular";
+                }
+            }
+
+            &:hover {
+                a {
+                    img {
+                        bottom: 5px;
+                    }
                 }
             }
         }
