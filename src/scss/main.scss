@@ -21,6 +21,8 @@ $border-color-5: #FBEEE1;
 
 $background-color-1: #E5E5E5;
 $background-color-2: #EE6F2D;
+$background-color-3: #FEFEFE;
+$background-color-4: #FBEEE1;
 
 * {
     margin: 0;
@@ -77,6 +79,14 @@ a.underlined {
 
     &:hover p {
         color: $font-color-3;
+    }
+
+    &.gray {
+        p {
+            &::after {
+                background-color: $background-color-1;
+            }
+        }
     }
 }
 
@@ -1115,7 +1125,7 @@ a.underlined {
     .projects_1 {
         display: flex;
         flex-direction: column;
-        padding: 120px 80px 100px 80px;
+        padding: 0 80px 36px 80px;
 
         h1 {
             margin-bottom: 32px;
@@ -1124,8 +1134,9 @@ a.underlined {
         .tags-filter {
             display: flex;
             gap: 24px;
+            margin-bottom: 8px;
 
-            .tag {
+            .tag-filter {
                 font-weight: 400;
                 font-size: 22px;
                 line-height: 130%;
@@ -1142,6 +1153,103 @@ a.underlined {
                 &.active {
                     background-color: $background-color-2;
                     color: $font-color-4;
+                }
+            }
+        }
+
+        .projects-wrapper {
+            .project {
+                margin: 64px 0;
+                display: flex;
+                gap: 24px;
+
+                .picture {
+                    position: relative;
+
+                    img {
+                        filter: grayscale(100%);
+                        transition: filter 0.3s;
+
+                        &:last-child {
+                            position: absolute;
+                            left: 24px;
+                            top: 24px;
+                            padding: 10px;
+                            background-color: $background-color-3;
+                            border-radius: 8px;
+
+                        }
+
+                        &:hover {
+                            filter: grayscale(0);
+                        }
+                    }
+
+                }
+
+                .description-box {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    width: 410px;
+
+                    .tags {
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 8px 12px;
+                        margin: 20px 0 30px;
+
+                        .tag {
+                            display: flex;
+                            align-items: center;
+                            font-size: 16px;
+                            line-height: 130%;
+                            letter-spacing: -0.01em;
+                            padding: 8px;
+                            background-color: $background-color-4;
+                            border-radius: 8px;
+
+                            img {
+                                margin-right: 5px;
+                            }
+
+                            &.inprogress {
+                                background-color: $background-color-1;
+                            }
+                        }
+                    }
+
+                    .description {
+                        font-size: 22px;
+                        line-height: 130%;
+                        letter-spacing: -0.01em;
+                    }
+
+                    a {
+                        margin-top: 32px;
+                        display: flex;
+                        align-items: center;
+
+                        p {
+                            font-size: 25px;
+                            line-height: 130%;
+                            letter-spacing: -0.01em;
+                            margin-top: 8px;
+                        }
+
+                        img {
+                            margin-left: 12px;
+                            position: relative;
+                            left: 0;
+                            transition: left 0.2s;
+                        }
+
+                        &:hover {
+                            img {
+                                left: 5px;
+                            }
+                        }
+                    }
                 }
             }
         }

@@ -91,7 +91,7 @@ if (homePageLoc) {
 // companies scroll
 
 const companyLoc = document.querySelectorAll(".companies .company");
-if (companyLoc) {
+if (companyLoc.length) {
 
     const barsLoc = document.querySelector(".bars");
 
@@ -166,4 +166,89 @@ if (companyLoc) {
         } 
         
     }, 6000);
+}
+
+// project tags
+
+const tagsFilterLoc = document.querySelectorAll(".tags-filter .tag-filter");
+
+if (tagsFilterLoc.length) {
+
+    const projectsLoc = document.querySelectorAll(".projects-wrapper .project");
+
+    tagsArray = [];
+
+    const displayProjectsByTags = () => {
+
+        projectsLoc.forEach((projElem)=>{
+
+            const tagsLoc = projElem.querySelectorAll(".tag");
+    
+            let findTag = false;
+            tagsLoc.forEach((tagElem)=> {
+                if (tagsArray.indexOf(tagElem.innerText) !== -1){
+                    findTag = true;
+                }
+            })
+    
+            if (findTag) {
+                projElem.style.display = "flex";
+            } else {
+                projElem.style.display = "none";
+            }
+        })
+    }
+
+    const createTagsArr = (filterElem) => {
+        if (tagsArray.indexOf(filterElem) === -1) {
+            tagsArray.push(filterElem)
+        } else {
+            tagsArray = tagsArray.filter((item) => {
+                return item !== filterElem
+            })
+        }
+
+        displayProjectsByTags();
+        
+    }
+
+    const allProjFilterLoc = document.querySelector(".tags-filter .all")
+    
+    tagsFilterLoc.forEach((filterElem)=>{
+        filterElem.addEventListener("click", ()=>{
+
+            if (filterElem.innerText !== "All projects") {
+                filterElem.classList.toggle("active");
+                allProjFilterLoc.classList.remove("active");
+                createTagsArr(filterElem.innerText);
+            } else {
+                allProjFilterLoc.classList.add("active");
+
+                tagsArray = [];
+
+                tagsFilterLoc.forEach((filterElem)=>{
+                    if (filterElem.innerText !== "All projects") {
+                        filterElem.classList.remove("active");
+                        tagsArray.push(filterElem.innerText);
+                    }
+                })
+
+                displayProjectsByTags()
+                tagsArray = [];
+            }
+
+            if (!tagsArray.length) {
+                allProjFilterLoc.classList.add("active");
+                tagsFilterLoc.forEach((filterElem)=>{
+                    if (filterElem.innerText !== "All projects") {
+                        filterElem.classList.remove("active");
+                        tagsArray.push(filterElem.innerText);
+                    }
+                })
+                displayProjectsByTags()
+                tagsArray = [];
+            };
+
+        })
+    })
 }
