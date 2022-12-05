@@ -1295,6 +1295,7 @@ a.underlined {
                 .title {
                     display: flex;
                     align-items: center;
+                    width: 660px;
 
                     h1 {
                         margin-right: 24px;
@@ -1302,7 +1303,8 @@ a.underlined {
                     }
 
                     img {
-                        margin: 0 6px 70px;
+                        margin: 9px 6px 0;
+                        align-self: flex-start;
                     }
 
                 }
@@ -1347,9 +1349,13 @@ a.underlined {
                 }
 
                 .navigation {
+                    display: flex;
+                    justify-content: flex-end;
                     width: 100%;
 
                     ul {
+                        width: 310px;
+
                         li {
                             list-style-type: none;
                             font-size: 25px;
@@ -1420,7 +1426,7 @@ a.underlined {
 
         .proj-det_3 {
             padding: 80px;
-            height: 500px;
+            // height: 500px;
 
             h2 {
                 margin-bottom: 52px;
@@ -1429,6 +1435,7 @@ a.underlined {
             .wrapper {
                 display: flex;
                 gap: 25px;
+                margin-bottom: 100px;
 
                 .box {
                     width: 33.33333%;
@@ -1611,6 +1618,74 @@ a.underlined {
                             left: 5px;
                         }
                     }
+                }
+            }
+        }
+
+        .proj-det_8 {
+            padding: 120px 0 120px 190px;
+            display: flex;
+            gap: 130px;
+            font-size: 25px;
+            line-height: 130%;
+            letter-spacing: -0.01em;
+            background-color: $background-color-5;
+
+            h2 {
+                margin-bottom: 32px;
+
+            }
+
+            ul {
+                margin-left: 24px;
+
+                li {
+                    margin-bottom: 8px;
+                }
+            }
+
+            .left {
+                width: 420px;
+            }
+
+            .right {
+                width: 420px;
+
+                h2 {
+                    &:nth-of-type(2) {
+                        margin-top: 80px;
+                    }
+
+                }
+            }
+        }
+
+        .proj-det_9 {
+            padding: 120px 0 120px 190px;
+            display: flex;
+            gap: 130px;
+            font-size: 25px;
+            line-height: 130%;
+            letter-spacing: -0.01em;
+
+            h2 {
+                margin-bottom: 32px;
+
+            }
+
+            .left {
+                width: 420px;
+            }
+
+            .right {
+                width: 420px;
+            }
+
+            p {
+                margin-bottom: 12px;
+
+                &:last-child {
+                    margin-bottom: 0;
                 }
             }
         }
