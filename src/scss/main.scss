@@ -1689,5 +1689,58 @@ a.underlined {
                 }
             }
         }
+
+        .proj-det_10 {
+            height: 650px;
+            display: flex;
+            gap: 24px;
+            font-size: 25px;
+            line-height: 130%;
+            letter-spacing: -0.01em;
+            background-color: $background-color-5;
+
+
+            h2 {
+                margin-bottom: 32px;
+
+            }
+
+            .left {
+                width: 420px;
+                margin: 120px 0 0 190px;
+                flex-shrink: 0;
+            }
+
+            .right {
+                width: 630px;
+                padding: 0 50px;
+                background-color: $background-color-3;
+                font-size: 29px;
+                line-height: 120%;
+                letter-spacing: -0.01em;
+                overflow-y: scroll;
+                padding: 20px 0;
+
+                ol {
+                    counter-reset: section;
+                    list-style-type: none;
+
+                }
+
+                li:before {
+                    counter-increment: section;
+                    content: counters(section, ".") ". ";
+                    font-family: "Telegraf Regular";
+                }
+            }
+
+            p {
+                margin-bottom: 12px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
     }
 }
