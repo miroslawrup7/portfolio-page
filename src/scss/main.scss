@@ -1332,6 +1332,8 @@ a.underlined {
                     display: flex;
                     align-items: center;
                     justify-content: end;
+                    flex-wrap: wrap;
+                    gap: 14px 24px;
 
                     .tag {
                         padding: 10px 12px;
@@ -1340,6 +1342,7 @@ a.underlined {
                         letter-spacing: -0.01em;
                         background-color: $background-color-1;
                         border-radius: 8px;
+                        flex-shrink: 0;
                     }
                 }
 
@@ -1405,6 +1408,10 @@ a.underlined {
 
                         &:last-child {
                             margin-bottom: 0px;
+                        }
+
+                        br {
+                            margin-bottom: 12px;
                         }
                     }
                 }
@@ -1531,6 +1538,79 @@ a.underlined {
 
                 .right {
                     width: 410px;
+                }
+            }
+        }
+
+        .proj-det_6 {
+            padding: 100px 80px 90px 180px;
+            display: flex;
+            justify-content: space-between;
+
+            .left {
+                width: 440px;
+                font-size: 25px;
+                line-height: 130%;
+                letter-spacing: -0.01em;
+
+                h2 {
+                    margin-bottom: 32px;
+                }
+
+                li {
+                    margin-bottom: 12px;
+                    margin-left: 32px;
+
+                    strong {
+                        font-family: "Telegraf Bold";
+                    }
+                }
+            }
+
+            .right {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                width: 520px;
+
+                p {
+                    font-size: 34px;
+                    line-height: 120%;
+                    letter-spacing: -0.01em;
+                    margin-top: 40px;
+                }
+            }
+        }
+
+        .proj-det_7 {
+            padding: 80px 740px 80px 180px;
+            background-color: $background-color-5;
+            font-size: 25px;
+            line-height: 130%;
+            letter-spacing: -0.01em;
+
+            h2 {
+                margin-bottom: 16px;
+            }
+
+            .left {
+                a {
+                    margin-top: 24px;
+                    display: flex;
+                    align-items: center;
+
+                    img {
+                        margin-left: 12px;
+                        position: relative;
+                        left: 0;
+                        transition: left 0.2s;
+                    }
+
+                    &:hover {
+                        img {
+                            left: 5px;
+                        }
+                    }
                 }
             }
         }
