@@ -930,12 +930,80 @@ a.underlined {
     }
 
     .about_2 {
-        padding: 80px;
-        min-height: 800px;
+        padding: 80px 400px 130px 80px;
         background-color: $background-color-1;
+        height: 900px;
 
         h1 {
-            margin-bottom: 39px;
+            margin-bottom: 40px;
+        }
+
+        .accordion {
+
+            .title-row {
+                display: flex;
+                height: 50px;
+                margin: 44px 0;
+
+                .number {
+                    font-size: 52px;
+                    line-height: 110%;
+                    letter-spacing: -0.02em;
+                    text-transform: uppercase;
+                    font-family: "Telegraf Regular";
+                    width: 110px;
+                    flex-shrink: 0;
+                }
+
+                .title-wrapper {
+                    width: 100%;
+                    border-bottom: 1px solid $border-color-4;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding-right: 6px;
+
+                    .title {
+                        font-family: "Telegraf Regular";
+                        font-size: 34px;
+                        line-height: 120%;
+                        letter-spacing: -0.01em;
+                    }
+
+                    img {
+                        padding: 10px;
+                        cursor: pointer;
+                        transition: transform 0.2s ease-out;
+
+                        &.active {
+                            transform: rotate(-150deg);
+                            filter: grayscale(100%) brightness(25%);
+                        }
+
+                        &:hover {
+                            transform: rotate(-150deg);
+                        }
+                    }
+                }
+            }
+
+            .content-row {
+                max-height: 0;
+                margin-left: 110px;
+                font-size: 22px;
+                line-height: 130%;
+                letter-spacing: -0.01em;
+                width: 520px;
+                margin-top: -10px;
+                margin-bottom: -10px;
+                transition: max-height 0.5s;
+                overflow: hidden;
+
+                &.active {
+                    max-height: 200px;
+                    transition: max-height 0.5s;
+                }
+            }
         }
     }
 
@@ -1273,7 +1341,6 @@ a.underlined {
             }
         }
     }
-
 
     &.projects-details {
         .intro {

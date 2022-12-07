@@ -252,3 +252,32 @@ if (tagsFilterLoc.length) {
         })
     })
 }
+
+// my process accordiom horizontal (about)
+
+const accordionLoc = document.querySelector(".about_2 .accordion");
+
+if (accordionLoc) {
+
+const arrowsLoc = accordionLoc.querySelectorAll(".title-wrapper img");
+const contentsLoc = accordionLoc.querySelectorAll(".row .content-row");
+
+arrowsLoc.forEach((elem)=> {
+    elem.addEventListener("click", ()=>{
+        arrowsLoc.forEach((el)=> {
+            el.classList.remove("active");
+        })
+        contentsLoc.forEach((elem)=> {
+            elem.classList.remove("active");
+        })
+        const clickedRowLoc = elem.closest(".row");
+        const clickedImgLoc = clickedRowLoc.querySelector("img");
+        const clickedContentLoc = clickedRowLoc.querySelector(".content-row");
+        clickedImgLoc.classList.add("active");
+        clickedContentLoc.classList.add("active");
+    })
+})
+
+
+
+}
