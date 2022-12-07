@@ -6,8 +6,6 @@ if (homePageLoc) {
     const projectArrowRightLoc = document.querySelector(".arrow-right");
     const projectBoxesLoc = document.querySelectorAll(".home_3 .box");
 
-    const projectsCount = projectBoxesLoc.length
-
     let projMovePosition = 0; 
     const projMoveDistance = 360;
 
@@ -66,7 +64,6 @@ if (homePageLoc) {
     firstWideBoxLoc[0].style.width = "960px";
     firstWideBoxLoc[0].style.borderLeft = "none";
 
-
     accordionArrowLoc.forEach((elem)=>{
         elem.addEventListener("click", (e)=>{
 
@@ -85,7 +82,6 @@ if (homePageLoc) {
             wideBox.style.width = "960px";
         })
     })
-
 }
 
 // companies scroll
@@ -209,7 +205,6 @@ if (tagsFilterLoc.length) {
         }
 
         displayProjectsByTags();
-        
     }
 
     const allProjFilterLoc = document.querySelector(".tags-filter .all")
@@ -277,7 +272,5 @@ arrowsLoc.forEach((elem)=> {
         clickedContentLoc.classList.add("active");
     })
 })
-
-
 
 }

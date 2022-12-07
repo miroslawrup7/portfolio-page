@@ -182,7 +182,8 @@ a.underlined {
                     position: absolute;
                     top: 0;
                     line-height: 100%;
-                    animation: slide 7s forwards, display 7s forwards;
+                    animation: slide 4s forwards;
+                    animation-timing-function: steps(3, end);
 
                     p {
                         font-family: "Telegraf Regular";
@@ -199,7 +200,7 @@ a.underlined {
                             bottom: 26px;
                             z-index: -1;
                             left: 8px;
-                            animation: width 7s forwards, display 7s forwards;
+                            animation: width 5.4s forwards;
                         }
                     }
                 }
@@ -210,7 +211,7 @@ a.underlined {
             display: flex;
             margin-bottom: 101px;
             animation: stack 20s infinite linear;
-            animation-delay: 6s;
+            animation-delay: 4s;
 
             p {
                 flex-shrink: 0;
@@ -277,90 +278,8 @@ a.underlined {
                 top: 0;
             }
 
-            24% {
-                top: 0;
-            }
-
-            25% {
-                top: -148px;
-            }
-
-            49% {
-                top: -148px;
-            }
-
-            50% {
-                top: -296px;
-            }
-
-            74% {
-                top: -296px;
-            }
-
-            75% {
-                top: -444px;
-            }
-
             100% {
                 top: -444px;
-            }
-        }
-
-        @keyframes display {
-            5% {
-                opacity: 1;
-            }
-
-            15% {
-                opacity: 1;
-            }
-
-            20% {
-                opacity: 0;
-            }
-
-            25% {
-                opacity: 0;
-            }
-
-            30% {
-                opacity: 1;
-            }
-
-            40% {
-                opacity: 1;
-            }
-
-            45% {
-                opacity: 0;
-            }
-
-            50% {
-                opacity: 0;
-            }
-
-            55% {
-                opacity: 1;
-            }
-
-            65% {
-                opacity: 1;
-            }
-
-            70% {
-                opacity: 0;
-            }
-
-            75% {
-                opacity: 0;
-            }
-
-            80% {
-                opacity: 1;
-            }
-
-            100% {
-                opacity: 1;
             }
         }
 
