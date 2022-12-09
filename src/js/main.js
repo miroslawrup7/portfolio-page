@@ -320,8 +320,10 @@ if (accordionLoc) {
 
 const arrowsLoc = accordionLoc.querySelectorAll(".title-wrapper img");
 const contentsLoc = accordionLoc.querySelectorAll(".row .content-row");
+const titleRowLoc = accordionLoc.querySelectorAll(".row .title-row");
 
-arrowsLoc.forEach((elem)=> {
+
+titleRowLoc.forEach((elem)=> {
     elem.addEventListener("click", ()=>{
         arrowsLoc.forEach((el)=> {
             el.classList.remove("active");

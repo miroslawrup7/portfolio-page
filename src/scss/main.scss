@@ -869,6 +869,7 @@ a.underlined {
                 display: flex;
                 height: 50px;
                 margin: 44px 0;
+                cursor: pointer;
 
                 .number {
                     font-size: 52px;
@@ -908,6 +909,14 @@ a.underlined {
                         &:hover {
                             transform: rotate(-150deg);
                         }
+                    }
+                }
+
+                &:hover {
+
+                    .number,
+                    .title {
+                        color: $font-color-3;
                     }
                 }
             }
