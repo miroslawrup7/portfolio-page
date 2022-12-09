@@ -164,28 +164,32 @@ if (companyLoc.length) {
     }, 6000);
 }
 
-// project tags
+// project tags 1 (single selection)
 
 const tagsFilterLoc = document.querySelectorAll(".tags-filter .tag-filter");
 
 if (tagsFilterLoc.length) {
 
     const projectsLoc = document.querySelectorAll(".projects-wrapper .project");
+    const allProjFilterLoc = document.querySelector(".tags-filter .all")
 
-    tagsArray = [];
-
-    const displayProjectsByTags = () => {
+    const displayProjectsByTags = (filterElemText) => {
 
         projectsLoc.forEach((projElem)=>{
 
             const tagsLoc = projElem.querySelectorAll(".tag");
     
             let findTag = false;
-            tagsLoc.forEach((tagElem)=> {
-                if (tagsArray.indexOf(tagElem.innerText) !== -1){
-                    findTag = true;
-                }
-            })
+
+            if (filterElemText) {
+                tagsLoc.forEach((tagElem)=>{
+                    if (tagElem.innerText === filterElemText){
+                        findTag = true;
+                    }
+                })
+            } else {
+                findTag = true;
+            }
     
             if (findTag) {
                 projElem.style.display = "flex";
@@ -195,58 +199,118 @@ if (tagsFilterLoc.length) {
         })
     }
 
-    const createTagsArr = (filterElem) => {
-        if (tagsArray.indexOf(filterElem) === -1) {
-            tagsArray.push(filterElem)
-        } else {
-            tagsArray = tagsArray.filter((item) => {
-                return item !== filterElem
-            })
-        }
-
-        displayProjectsByTags();
-    }
-
-    const allProjFilterLoc = document.querySelector(".tags-filter .all")
-    
     tagsFilterLoc.forEach((filterElem)=>{
         filterElem.addEventListener("click", ()=>{
 
             if (filterElem.innerText !== "All projects") {
-                filterElem.classList.toggle("active");
+                
+                tagsFilterLoc.forEach((elem)=>{
+                    elem.classList.remove("active");
+                })
+
+                filterElem.classList.add("active");
                 allProjFilterLoc.classList.remove("active");
-                createTagsArr(filterElem.innerText);
+                displayProjectsByTags(filterElem.innerText)
+
             } else {
-                allProjFilterLoc.classList.add("active");
 
-                tagsArray = [];
+                allProjFilterLoc.classList.add("active");
 
                 tagsFilterLoc.forEach((filterElem)=>{
                     if (filterElem.innerText !== "All projects") {
                         filterElem.classList.remove("active");
-                        tagsArray.push(filterElem.innerText);
                     }
                 })
 
                 displayProjectsByTags()
-                tagsArray = [];
             }
-
-            if (!tagsArray.length) {
-                allProjFilterLoc.classList.add("active");
-                tagsFilterLoc.forEach((filterElem)=>{
-                    if (filterElem.innerText !== "All projects") {
-                        filterElem.classList.remove("active");
-                        tagsArray.push(filterElem.innerText);
-                    }
-                })
-                displayProjectsByTags()
-                tagsArray = [];
-            };
-
         })
     })
 }
+
+// project tags 2 (multiple selection)
+
+// const tagsFilterLoc = document.querySelectorAll(".tags-filter .tag-filter");
+
+// if (tagsFilterLoc.length) {
+
+//     const projectsLoc = document.querySelectorAll(".projects-wrapper .project");
+
+//     tagsArray = [];
+
+//     const displayProjectsByTags = () => {
+
+//         projectsLoc.forEach((projElem)=>{
+
+//             const tagsLoc = projElem.querySelectorAll(".tag");
+    
+//             let findTag = false;
+//             tagsLoc.forEach((tagElem)=> {
+//                 if (tagsArray.indexOf(tagElem.innerText) !== -1){
+//                     findTag = true;
+//                 }
+//             })
+    
+//             if (findTag) {
+//                 projElem.style.display = "flex";
+//             } else {
+//                 projElem.style.display = "none";
+//             }
+//         })
+//     }
+
+//     const createTagsArr = (filterElem) => {
+//         if (tagsArray.indexOf(filterElem) === -1) {
+//             tagsArray.push(filterElem)
+//         } else {
+//             tagsArray = tagsArray.filter((item) => {
+//                 return item !== filterElem
+//             })
+//         }
+
+//         displayProjectsByTags();
+//     }
+
+//     const allProjFilterLoc = document.querySelector(".tags-filter .all")
+    
+//     tagsFilterLoc.forEach((filterElem)=>{
+//         filterElem.addEventListener("click", ()=>{
+
+//             if (filterElem.innerText !== "All projects") {
+//                 filterElem.classList.toggle("active");
+//                 allProjFilterLoc.classList.remove("active");
+//                 createTagsArr(filterElem.innerText);
+//             } else {
+//                 allProjFilterLoc.classList.add("active");
+
+//                 tagsArray = [];
+
+//                 tagsFilterLoc.forEach((filterElem)=>{
+//                     if (filterElem.innerText !== "All projects") {
+//                         filterElem.classList.remove("active");
+//                         tagsArray.push(filterElem.innerText);
+//                     }
+//                 })
+
+//                 displayProjectsByTags()
+//                 tagsArray = [];
+//             }
+
+//             if (!tagsArray.length) {
+//                 allProjFilterLoc.classList.add("active");
+//                 tagsFilterLoc.forEach((filterElem)=>{
+//                     if (filterElem.innerText !== "All projects") {
+//                         filterElem.classList.remove("active");
+//                         tagsArray.push(filterElem.innerText);
+//                     }
+//                 })
+//                 displayProjectsByTags()
+//                 tagsArray = [];
+//             };
+
+//         })
+//     })
+// }
 
 // my process accordiom horizontal (about)
 
