@@ -64,7 +64,7 @@ if (homePageLoc) {
     firstWideBoxLoc[0].style.width = "960px";
     firstWideBoxLoc[0].style.borderLeft = "none";
 
-    accordionArrowLoc.forEach((elem)=>{
+    firstNarrowBoxLoc.forEach((elem)=>{
         elem.addEventListener("click", (e)=>{
 
             firstNarrowBoxLoc.forEach((elem)=>{

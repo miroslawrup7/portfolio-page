@@ -126,7 +126,7 @@ a.underlined {
                 flex-grow: 1;
             }
 
-            margin: 48px 80px 132px;
+            margin: 48px 80px 80px;
 
             ul {
                 display: flex;
@@ -544,7 +544,7 @@ a.underlined {
                         margin-top: 12px;
                     }
 
-                    a {
+                    a.underlined {
                         display: flex;
                         font-size: 22px;
                         line-height: 130%;
@@ -582,11 +582,13 @@ a.underlined {
                 align-items: center;
                 transition: all 0.3s;
                 overflow: hidden;
+                cursor: pointer;
 
                 .number {
                     font-family: "Telegraf Regular";
                     font-size: 39px;
                     margin-top: 40px;
+                    transition: color 0.1s;
                 }
 
                 .title {
@@ -595,25 +597,29 @@ a.underlined {
                     font-family: "Telegraf Regular";
                     font-size: 34px;
                     margin-top: 24px;
+                    transition: color 0.1s;
                 }
 
                 .acc-arrow {
                     margin-top: auto;
-                    cursor: pointer;
                     padding: 15px;
 
                     img {
                         display: flex;
                         transform: rotate(none);
                         transition: transform 0.2s;
+                    }
+                }
 
+                &:hover {
 
+                    .number,
+                    .title {
+                        color: $font-color-3;
                     }
 
-                    &:hover {
-                        img {
-                            transform: rotate(-60deg);
-                        }
+                    img {
+                        transform: rotate(-60deg);
                     }
                 }
             }
@@ -1176,7 +1182,7 @@ a.underlined {
                         filter: grayscale(100%);
                         transition: filter 0.3s;
 
-                        &:last-child {
+                        &.logo {
                             position: absolute;
                             left: 24px;
                             top: 24px;
