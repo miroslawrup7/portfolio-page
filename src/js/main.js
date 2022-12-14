@@ -170,33 +170,52 @@ const tagsFilterLoc = document.querySelectorAll(".tags-filter .tag-filter");
 
 if (tagsFilterLoc.length) {
 
+    const projectsWrapperLoc = document.querySelector(".projects-wrapper");
     const projectsLoc = document.querySelectorAll(".projects-wrapper .project");
     const allProjFilterLoc = document.querySelector(".tags-filter .all")
-
+    const loaderLoc = document.querySelector(".loader")
+    
     const displayProjectsByTags = (filterElemText) => {
 
-        projectsLoc.forEach((projElem)=>{
+        setTimeout(()=>{
+            projectsWrapperLoc.style.opacity = "0";
+        }, 0);
 
-            const tagsLoc = projElem.querySelectorAll(".tag");
-    
-            let findTag = false;
+        setTimeout(()=>{
+            loaderLoc.style.display = "block";
+        }, 200);
 
-            if (filterElemText) {
-                tagsLoc.forEach((tagElem)=>{
-                    if (tagElem.innerText === filterElemText){
-                        findTag = true;
-                    }
-                })
-            } else {
-                findTag = true;
-            }
+        setTimeout(()=>{
+            loaderLoc.style.display = "none";
+        }, 2000);
+        setTimeout(()=>{
+            projectsLoc.forEach((projElem)=>{
+
+                const tagsLoc = projElem.querySelectorAll(".tag");
+        
+                let findTag = false;
     
-            if (findTag) {
-                projElem.style.display = "flex";
-            } else {
-                projElem.style.display = "none";
-            }
-        })
+                if (filterElemText) {
+                    tagsLoc.forEach((tagElem)=>{
+                        if (tagElem.innerText === filterElemText){
+                            findTag = true;
+                        }
+                    })
+                } else {
+                    findTag = true;
+                }
+        
+                if (findTag) {
+                    projElem.style.display = "flex";
+                } else {
+                    projElem.style.display = "none";
+                }
+            })
+        }, 2000);
+        
+        setTimeout(()=>{
+            projectsWrapperLoc.style.opacity = "1";
+        }, 2000);
     }
 
     tagsFilterLoc.forEach((filterElem)=>{
@@ -318,25 +337,25 @@ const accordionLoc = document.querySelector(".about_2 .accordion");
 
 if (accordionLoc) {
 
-const arrowsLoc = accordionLoc.querySelectorAll(".title-wrapper img");
-const contentsLoc = accordionLoc.querySelectorAll(".row .content-row");
-const titleRowLoc = accordionLoc.querySelectorAll(".row .title-row");
+    const arrowsLoc = accordionLoc.querySelectorAll(".title-wrapper img");
+    const contentsLoc = accordionLoc.querySelectorAll(".row .content-row");
+    const titleRowLoc = accordionLoc.querySelectorAll(".row .title-row");
 
 
-titleRowLoc.forEach((elem)=> {
-    elem.addEventListener("click", ()=>{
-        arrowsLoc.forEach((el)=> {
-            el.classList.remove("active");
+    titleRowLoc.forEach((elem)=> {
+        elem.addEventListener("click", ()=>{
+            arrowsLoc.forEach((el)=> {
+                el.classList.remove("active");
+            })
+            contentsLoc.forEach((elem)=> {
+                elem.classList.remove("active");
+            })
+            const clickedRowLoc = elem.closest(".row");
+            const clickedImgLoc = clickedRowLoc.querySelector("img");
+            const clickedContentLoc = clickedRowLoc.querySelector(".content-row");
+            clickedImgLoc.classList.add("active");
+            clickedContentLoc.classList.add("active");
         })
-        contentsLoc.forEach((elem)=> {
-            elem.classList.remove("active");
-        })
-        const clickedRowLoc = elem.closest(".row");
-        const clickedImgLoc = clickedRowLoc.querySelector("img");
-        const clickedContentLoc = clickedRowLoc.querySelector(".content-row");
-        clickedImgLoc.classList.add("active");
-        clickedContentLoc.classList.add("active");
     })
-})
 
 }

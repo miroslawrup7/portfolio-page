@@ -1178,100 +1178,115 @@ a.underlined {
             }
         }
 
-        .projects-wrapper {
-            .project {
-                margin: 64px 0;
-                display: flex;
-                gap: 24px;
+        .projects-wrapper-loader {
+            position: relative;
 
-                .picture {
-                    position: relative;
+            .projects-wrapper {
+                opacity: 1;
+                transition: opacity 0.2s;
 
-                    img {
-                        filter: grayscale(100%);
-                        transition: filter 0.3s;
-
-                        &.logo {
-                            position: absolute;
-                            left: 24px;
-                            top: 24px;
-                            padding: 10px;
-                            background-color: $background-color-3;
-                            border-radius: 8px;
-
-                        }
-
-                        &:hover {
-                            filter: grayscale(0);
-                        }
-                    }
-
-                }
-
-                .description-box {
+                .project {
+                    margin: 64px 0;
                     display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    width: 410px;
+                    gap: 24px;
 
-                    .tags {
-                        display: flex;
-                        flex-wrap: wrap;
-                        gap: 8px 12px;
-                        margin: 20px 0 30px;
-
-                        .tag {
-                            display: flex;
-                            align-items: center;
-                            font-size: 16px;
-                            line-height: 130%;
-                            letter-spacing: -0.01em;
-                            padding: 8px;
-                            background-color: $background-color-4;
-                            border-radius: 8px;
-
-                            img {
-                                margin-right: 5px;
-                            }
-
-                            &.inprogress {
-                                background-color: $background-color-1;
-                            }
-                        }
-                    }
-
-                    .description {
-                        font-size: 22px;
-                        line-height: 130%;
-                        letter-spacing: -0.01em;
-                    }
-
-                    a {
-                        margin-top: 32px;
-                        display: flex;
-                        align-items: center;
-
-                        p {
-                            font-size: 25px;
-                            line-height: 130%;
-                            letter-spacing: -0.01em;
-                            margin-top: 8px;
-                        }
+                    .picture {
+                        position: relative;
 
                         img {
-                            margin-left: 12px;
-                            position: relative;
-                            left: 0;
-                            transition: left 0.2s;
+                            filter: grayscale(100%);
+                            transition: filter 0.3s;
+
+                            &.logo {
+                                position: absolute;
+                                left: 24px;
+                                top: 24px;
+                                padding: 10px;
+                                background-color: $background-color-3;
+                                border-radius: 8px;
+
+                            }
+
+                            &:hover {
+                                filter: grayscale(0);
+                            }
                         }
 
-                        &:hover {
+                    }
+
+                    .description-box {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        width: 410px;
+
+                        .tags {
+                            display: flex;
+                            flex-wrap: wrap;
+                            gap: 8px 12px;
+                            margin: 20px 0 30px;
+
+                            .tag {
+                                display: flex;
+                                align-items: center;
+                                font-size: 16px;
+                                line-height: 130%;
+                                letter-spacing: -0.01em;
+                                padding: 8px;
+                                background-color: $background-color-4;
+                                border-radius: 8px;
+
+                                img {
+                                    margin-right: 5px;
+                                }
+
+                                &.inprogress {
+                                    background-color: $background-color-1;
+                                }
+                            }
+                        }
+
+                        .description {
+                            font-size: 22px;
+                            line-height: 130%;
+                            letter-spacing: -0.01em;
+                        }
+
+                        a {
+                            margin-top: 32px;
+                            display: flex;
+                            align-items: center;
+
+                            p {
+                                font-size: 25px;
+                                line-height: 130%;
+                                letter-spacing: -0.01em;
+                                margin-top: 8px;
+                            }
+
                             img {
-                                left: 5px;
+                                margin-left: 12px;
+                                position: relative;
+                                left: 0;
+                                transition: left 0.2s;
+                            }
+
+                            &:hover {
+                                img {
+                                    left: 5px;
+                                }
                             }
                         }
                     }
                 }
+            }
+
+            .loader {
+                display: none;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%)
             }
         }
     }
